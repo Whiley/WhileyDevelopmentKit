@@ -1,0 +1,29 @@
+<project name="BuildConfig" xmlns:maven="urn:maven-ant">
+  <!-- Get the root directory of the project by looking at the directory enclosing this file. -->
+  <dirname property="rootdir" file="${ant.file.BuildConfig}"/>
+
+  <!-- Set the current Whiley version -->
+  <property name="version" value="0.4.0"/>
+
+  <!-- Load the Maven Ant tasks so that we can work with Maven repositories. -->
+  <typedef uri="urn:maven-ant"
+           classpath="${rootdir}/lib/maven-ant-tasks-2.1.3.jar"
+           resource="org/apache/maven/artifact/ant/antlib.xml"/>
+
+  <!-- Paths to common DIRs -->
+  <property name="LIB_DIR" value="${rootdir}/lib/"/>
+  <property name="RELEASE_DIR" value="${rootdir}/dist/v${version}/"/>
+
+  <!-- Identify Local Dependencies -->
+  <fileset id="local.dependencies" dir="${LIB_DIR}">
+    <filename name="**/*.jar"/>
+    <filename name="**/maven*" negate="True"/>    
+  </fileset>
+  
+  <!-- Identify Local Dependencies -->  
+  <maven:dependencies filesetId="remote.dependencies">
+    <dependency groupId="org.whiley" artifactId="wycc" version="0.4.0"/>
+    <dependency groupId="org.whiley" artifactId="jasm" version="1.0.1"/>
+  </maven:dependencies>
+  
+</project>

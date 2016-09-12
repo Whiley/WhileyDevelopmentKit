@@ -1,0 +1,25 @@
+<project name="wyc" default="build">
+  <import file="config.xml"/>
+
+  <!-- ================================================================== -->
+  <!-- Build -->
+  <!-- ================================================================== -->
+
+  <target name="build">
+    <echo message="============================================="/>
+    <echo message="Building ${RELEASE_DIR}"/>
+    <echo message="============================================="/>
+    <echo message="Cleaning existing dir"/>
+    <delete dir="tmp"/>
+    <echo message="Making release dir"/>     
+    <mkdir dir="${RELEASE_DIR}"/>
+    <mkdir dir="${RELEASE_DIR}/lib"/>
+    <echo message="Copying dependencies"/>            
+    <copy todir="${RELEASE_DIR}/lib">
+      <fileset refid="local.dependencies"/>
+      <fileset refid="remote.dependencies"/>
+      <mapper type="flatten" />
+    </copy>
+  </target>
+
+</project>
