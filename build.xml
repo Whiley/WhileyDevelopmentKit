@@ -14,12 +14,18 @@
     <echo message="Making release dir"/>     
     <mkdir dir="${RELEASE_DIR}"/>
     <mkdir dir="${RELEASE_DIR}/lib"/>
+    <mkdir dir="${RELEASE_DIR}/bin"/>    
     <echo message="Copying dependencies"/>            
     <copy todir="${RELEASE_DIR}/lib">
       <fileset refid="local.dependencies"/>
       <fileset refid="remote.dependencies"/>
-      <mapper type="flatten" />
+      <mapper type="flatten"/>
     </copy>
+    <copy todir="${RELEASE_DIR}/bin">
+      <fileset dir="bin">
+	<include name="wy"/>
+      </fileset>
+    </copy>    
   </target>
 
 </project>
