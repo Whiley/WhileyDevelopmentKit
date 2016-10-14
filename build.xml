@@ -25,7 +25,12 @@
       <fileset dir="bin">
 	<include name="wy"/>
       </fileset>
-    </copy>    
+    </copy>
+    <chmod verbose="Yes" perm="0544">
+      <fileset dir="${RELEASE_DIR}/bin">
+	<include name="*"/>	
+      </fileset>
+    </chmod>
   </target>
 
 </project>
