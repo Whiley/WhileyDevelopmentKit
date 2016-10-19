@@ -87,4 +87,4 @@ WHILEY_BOOTPATH="$WYRT_JAR"
 # RUN APPLICATION
 ######################
 
-java -server -Xmx2G -cp "$WHILEY_CLASSPATH" wycc.WyMain "$@"
+java -server -Xmx2G -cp "$WHILEY_CLASSPATH" -Dwdk.bootpath="$WHILEY_BOOTPATH" wycc.WyMain "$@"
