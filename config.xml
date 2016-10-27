@@ -22,9 +22,10 @@
 
   <!-- Identify Local Dependencies -->
   <maven:dependencies filesetId="remote.dependencies">
-    <dependency groupId="org.whiley" artifactId="wycc" version="0.5.0"/>
-    <dependency groupId="org.whiley" artifactId="wyc" version="0.4.3"/>
+    <dependency groupId="org.whiley" artifactId="wycc" version="0.5.1-SNAPSHOT"/>
+    <dependency groupId="org.whiley" artifactId="wyc" version="0.4.4-SNAPSHOT"/>
     <dependency groupId="org.whiley" artifactId="wytp" version="0.4.0"/>
+    <dependency groupId="org.whiley" artifactId="wyjc" version="0.4.1-SNAPSHOT"/>
     <dependency groupId="org.whiley" artifactId="jasm" version="1.0.1"/>
   </maven:dependencies>
 
