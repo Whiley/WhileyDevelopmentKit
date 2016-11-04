@@ -1,4 +1,4 @@
-<project name="wyc" default="build">
+<project name="wyc" default="dist">
   <import file="config.xml"/>
 
   <!-- ================================================================== -->
@@ -11,16 +11,18 @@
     <echo message="============================================="/>
     <echo message="Cleaning existing dir"/>
     <delete dir="tmp"/>
-    <echo message="Making release dir"/>     
+    <echo message="Making release dir"/>
     <mkdir dir="${RELEASE_DIR}"/>
     <mkdir dir="${RELEASE_DIR}/lib"/>
-    <mkdir dir="${RELEASE_DIR}/bin"/>    
-    <echo message="Copying dependencies"/>            
+    <mkdir dir="${RELEASE_DIR}/bin"/>
+    <mkdir dir="${RELEASE_DIR}/doc"/>
+    <echo message="Copying dependencies..."/>
     <copy todir="${RELEASE_DIR}/lib">
       <fileset refid="local.dependencies"/>
       <fileset refid="remote.dependencies"/>
       <mapper type="flatten"/>
     </copy>
+    <echo message="Copying scripts..."/>
     <copy todir="${RELEASE_DIR}/bin">
       <fileset dir="bin">
 	<include name="wy"/>
@@ -31,6 +33,29 @@
 	<include name="*"/>	
       </fileset>
     </chmod>
+    <echo message="Copying docs..."/>
+    <copy todir="${RELEASE_DIR}/doc">
+      <fileset dir="doc">
+	<include name="*.pdf"/>
+      </fileset>
+    </copy>
   </target>
 
+  <!-- ================================================================== -->
+  <!-- Dist -->
+  <!-- ================================================================== -->
+  <target name="dist" depends="build">
+    <tar destfile="dist/wdk-v${version}.tar" longfile="gnu">
+      <tarfileset dir="dist/">
+	<include name="wdk-v${version}/**/*"/>
+	<exclude name="wdk-v${version}/bin/*"/>
+	<exclude name="wdk-v${version}/lib/ant*.jar"/>
+      </tarfileset>
+      <tarfileset dir="dist/" filemode="755">
+	<include name="wdk-v${version}/bin/*"/>
+      </tarfileset>
+    </tar>
+    <gzip destfile="dist/wdk-v${version}.tgz" src="dist/wdk-v${version}.tar"/>
+    <delete file="dist/wdk-v${version}.tar"/>
+  </target>
 </project>

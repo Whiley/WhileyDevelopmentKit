@@ -3,7 +3,7 @@
   <dirname property="rootdir" file="${ant.file.BuildConfig}"/>
 
   <!-- Set the current Whiley version -->
-  <property name="version" value="0.4.0"/>
+  <property name="version" value="0.4.0-beta"/>
 
   <!-- Load the Maven Ant tasks so that we can work with Maven repositories. -->
   <typedef uri="urn:maven-ant"
@@ -12,7 +12,7 @@
 
   <!-- Paths to common DIRs -->
   <property name="LIB_DIR" value="${rootdir}/lib/"/>
-  <property name="RELEASE_DIR" value="${rootdir}/dist/v${version}/"/>
+  <property name="RELEASE_DIR" value="${rootdir}/dist/wdk-v${version}/"/>
 
   <!-- Identify Local Dependencies -->
   <fileset id="local.dependencies" dir="${LIB_DIR}">
@@ -22,10 +22,10 @@
 
   <!-- Identify Local Dependencies -->
   <maven:dependencies filesetId="remote.dependencies">
-    <dependency groupId="org.whiley" artifactId="wycc" version="0.5.1-SNAPSHOT"/>
-    <dependency groupId="org.whiley" artifactId="wyc" version="0.4.4-SNAPSHOT"/>
+    <dependency groupId="org.whiley" artifactId="wycc" version="0.5.2"/>
+    <dependency groupId="org.whiley" artifactId="wyc" version="0.4.5"/>
     <dependency groupId="org.whiley" artifactId="wytp" version="0.4.0"/>
-    <dependency groupId="org.whiley" artifactId="wyjc" version="0.4.1-SNAPSHOT"/>
+    <dependency groupId="org.whiley" artifactId="wyjc" version="0.4.1"/>
     <dependency groupId="org.whiley" artifactId="jasm" version="1.0.1"/>
   </maven:dependencies>
 
