@@ -42,9 +42,9 @@
   </target>
 
   <!-- ================================================================== -->
-  <!-- Dist -->
+  <!-- WDK -->
   <!-- ================================================================== -->
-  <target name="dist" depends="build">
+  <target name="dist-wdk" depends="build">
     <tar destfile="dist/wdk-v${version}.tar" longfile="gnu">
       <tarfileset dir="dist/">
 	<include name="wdk-v${version}/**/*"/>
@@ -58,4 +58,35 @@
     <gzip destfile="dist/wdk-v${version}.tgz" src="dist/wdk-v${version}.tar"/>
     <delete file="dist/wdk-v${version}.tar"/>
   </target>
+
+  <!-- ================================================================== -->
+  <!-- Jar -->
+  <!-- ================================================================== -->
+  <target name="dist-jar" depends="build">
+    <mkdir dir="tmp"/>
+    <manifest file="tmp/MANIFEST.MF">
+      <attribute name="Built-By" value="${user.name}"/>
+      <attribute name="Main-Class" value="wycc.WyMain"/>
+      <attribute name="Implementation-Version" value="${version}"/>
+    </manifest>
+    <unzip dest="tmp">
+      <patternset>
+        <exclude name="org/**"/>
+      </patternset>
+      <fileset refid="local.dependencies"/>
+      <fileset refid="remote.dependencies"/>
+    </unzip>
+    <jar destfile="dist/wycc-all-v${version}.jar" manifest="tmp/MANIFEST.MF">
+       <fileset dir="tmp">
+	 <include name="**/*"/>
+       </fileset>
+    </jar>
+  </target>
+
+  <!-- ================================================================== -->
+  <!-- Dist -->
+  <!-- ================================================================== -->
+  <target name="dist" depends="dist-wdk,dist-jar">
+  </target>
+
 </project>
