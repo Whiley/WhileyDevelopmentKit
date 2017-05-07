@@ -35,7 +35,7 @@
 
 DIR=`dirname "$0"`/..
 LIBDIR=$DIR/lib
-LIBS="wycc wyc wyjc wytp jasm"
+LIBS="wycc wyc wyjc wytp wyjs jasm"
 
 # check for running under cywin
 cygwin=false
