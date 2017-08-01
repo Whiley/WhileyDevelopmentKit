@@ -16,6 +16,12 @@
     <mkdir dir="${RELEASE_DIR}/lib"/>
     <mkdir dir="${RELEASE_DIR}/bin"/>
     <mkdir dir="${RELEASE_DIR}/doc"/>
+    <echo message="Copying default configuration..."/>    
+    <copy todir="${RELEASE_DIR}">
+      <fileset dir=".">
+	<include name="config.wyml"/>
+      </fileset>      
+    </copy>
     <echo message="Copying dependencies..."/>
     <copy todir="${RELEASE_DIR}/lib">
       <fileset refid="local.dependencies"/>

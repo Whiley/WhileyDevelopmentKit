@@ -1,0 +1,5 @@
+[plugins]
+wyc = "wyc.Activator"
+wyjc = "wyjc.Activator"
+wyjs = "wyjs.Activator"
+wyal = "wyal.Activator"

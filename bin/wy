@@ -79,9 +79,9 @@ done
 # CONSTRUCT BOOTPATH
 ######################
 
-tmp=$(echo $LIBDIR/wyrt-*.jar)
-WYRT_JAR=${tmp##* }
-WHILEY_BOOTPATH="$WYRT_JAR"
+tmp=$(echo $LIBDIR/wystd-*.jar)
+WYSTD_JAR=${tmp##* }
+WHILEY_BOOTPATH="$WYSTD_JAR"
 
 ######################
 # RUN APPLICATION
