@@ -25,7 +25,7 @@
     <dependency groupId="org.whiley" artifactId="wycc" version="0.5.8"/>
     <dependency groupId="org.whiley" artifactId="wyc" version="0.4.16"/>
     <dependency groupId="org.whiley" artifactId="wytp" version="0.6.4"/>
-    <dependency groupId="org.whiley" artifactId="wyjc" version="0.4.5"/>
+    <dependency groupId="org.whiley" artifactId="wyjc" version="0.4.6"/>
     <dependency groupId="org.whiley" artifactId="wyjs" version="0.4"/>
     <dependency groupId="org.whiley" artifactId="jasm" version="1.0.1"/>
   </maven:dependencies>
