@@ -35,7 +35,10 @@
 
 DIR=`dirname "$0"`/..
 LIBDIR=$DIR/lib
-LIBS="wycc wyc wyjc wytp wyjs jasm"
+#LIBS="wycc wyc wyjc wytp wyjs jasm"
+
+LIBS=`ls $LIBDIR/*.jar`
+echo $OTHERS
 
 # check for running under cywin
 cygwin=false
@@ -62,10 +65,8 @@ WHILEY_CLASSPATH=$CLASSPATH
 # it is important to first use the * expansion, and then
 # use the last one via the "##* " expansion.
 
-for lib in $LIBS
+for JAR in $LIBS
 do
-    tmp=$(echo $LIBDIR/${lib}-*.jar)
-    JAR=${tmp##* }
     case "$JAR" in
     *\**)
         echo "Library '$lib' not found"
