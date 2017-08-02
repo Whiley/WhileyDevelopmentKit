@@ -1,6 +1,5 @@
-import string from std.ascii
-import append from std.ascii
-import println from std.io
+import std.ascii
+import std.io
 
 // the British interpretation of traffic lights!
 type TrafficLights is ({
@@ -33,31 +32,31 @@ function change(TrafficLights ls) -> TrafficLights:
         // -> !red && amber && !green
         return { red: true, amber: false, green: false }
 
-function toString(TrafficLights ls) -> string:
-    string r
+function toString(TrafficLights ls) -> ascii.string:
+    ascii.string r
     //
     if ls.red:
         r = "RED "
     else:
         r = "    "
     if ls.amber:
-        r = append(r,"AMBER ")
+        r = ascii.append(r,"AMBER ")
     else:
-        r = append(r,"       ")
+        r = ascii.append(r,"       ")
     if ls.green:
-        r = append(r,"GREEN ")
+        r = ascii.append(r,"GREEN ")
     else:
-        r = append(r,"      ")
+        r = ascii.append(r,"      ")
     return r
 
-public method main(string[] args):
+public method main(ascii.string[] args):
     TrafficLights lights = TrafficLights()
-    println(toString(lights))
+    io.println(toString(lights))
     lights = change(lights)
-    println(toString(lights))
+    io.println(toString(lights))
     lights = change(lights)
-    println(toString(lights))
+    io.println(toString(lights))
     lights = change(lights)
-    println(toString(lights))
+    io.println(toString(lights))
     lights = change(lights)
-    println(toString(lights))
+    io.println(toString(lights))

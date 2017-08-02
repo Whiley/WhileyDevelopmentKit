@@ -1,7 +1,6 @@
-import slice from std.array
-import string from std.ascii
-import print from std.io
-import println from std.io
+import std.array
+import std.ascii
+import std.io
 
 /**
  * Perform a merge sort of integer items.
@@ -11,8 +10,8 @@ function sort(int[] items) -> int[]:
     if |items| > 1:
         // First, sort left and right sub-lists
         int pivot = |items| / 2
-        int[] lhs = sort(slice(items,0,pivot))
-        int[] rhs = sort(slice(items,pivot,|items|))
+        int[] lhs = sort(array.slice(items,0,pivot))
+        int[] rhs = sort(array.slice(items,pivot,|items|))
         // Second, merge left and right sublists into
         // original list.
         int l = 0 // left sublist index
@@ -42,15 +41,15 @@ function sort(int[] items) -> int[]:
 method printArray(int[] results):
     int i = 0
     //
-    print("[")
+    io.print("[")
     while i < |results|:
         if i != 0:
-            print(", ")
-        print(results[i])
+            io.print(", ")
+        io.print(results[i])
         i = i + 1
-    println("]")
+    io.println("]")
 
-method main(string[] args):
+method main(ascii.string[] args):
     printArray(sort([0;0]))
     printArray(sort([4,3,5,2,1]))
     printArray(sort([3,4,7,1,2]))

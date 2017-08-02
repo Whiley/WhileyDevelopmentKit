@@ -1,5 +1,5 @@
-import string from std.ascii
-import File from std.fs
+import std.ascii
+import std.fs
 import std.array
 import std.io
 
@@ -76,7 +76,7 @@ ensures C.width == B.width && C.height == A.height:
 // Parser Code
 // ========================================================
 
-function parseFile(string input) -> (Matrix|null a,Matrix|null b):
+function parseFile(ascii.string input) -> (Matrix|null a,Matrix|null b):
     Matrix|null A // 1st result
     Matrix|null B // 2nd result
     int[]|null data
@@ -94,7 +94,7 @@ function parseFile(string input) -> (Matrix|null a,Matrix|null b):
     //
     return null,null
 
-function parseMatrix(nat height, nat width, int pos, string input) -> (Matrix|null m, int npos):
+function parseMatrix(nat height, nat width, int pos, ascii.string input) -> (Matrix|null m, int npos):
     //
     int[][] rows = [[0;0];height]
     int[]|null row
@@ -110,7 +110,7 @@ function parseMatrix(nat height, nat width, int pos, string input) -> (Matrix|nu
     //
     return Matrix(width,height,rows),pos
 
-function parseLine(int count, int pos, string input) -> (int[]|null data,int npos):
+function parseLine(int count, int pos, ascii.string input) -> (int[]|null data,int npos):
     //
     pos = skipWhiteSpace(pos,input)
     int[] ints = [0;0]
@@ -129,7 +129,7 @@ function parseLine(int count, int pos, string input) -> (int[]|null data,int npo
     else:
         return ints,pos
 
-function parseInt(int pos, string input) -> (int|null data,int npos):
+function parseInt(int pos, ascii.string input) -> (int|null data,int npos):
     //
     int start = pos
     // check for negative input
@@ -142,16 +142,16 @@ function parseInt(int pos, string input) -> (int|null data,int npos):
     if pos == start:
         return null,pos
     else:
-        string tmp = array.slice(input,start,pos)
+        ascii.string tmp = array.slice(input,start,pos)
         return ascii.parseInt(tmp),pos
 
-function skipBreak(int index, string input) -> int:
+function skipBreak(int index, ascii.string input) -> int:
     while index < |input| && input[index] == '-':
         index = index + 1
     //
     return skipWhiteSpace(index,input)
 
-function skipWhiteSpace(int index, string input) -> int:
+function skipWhiteSpace(int index, ascii.string input) -> int:
     while index < |input| && isWhiteSpace(input[index]):
         index = index + 1
     //
@@ -175,13 +175,13 @@ method printMat(Matrix A):
         i = i + 1
         io.println(" ")
 
-method main(string[] args):
+method main(ascii.string[] args):
     if |args| == 0:
         io.println("usage: matrix <input-file>")
     else:
-        File file = fs.open(args[0])
+        fs.File file = fs.open(args[0])
         // first, read data
-        string input = ascii.fromBytes(file.readAll())
+        ascii.string input = ascii.fromBytes(file.readAll())
         // second, build the matrices
         null|Matrix A
         null|Matrix B

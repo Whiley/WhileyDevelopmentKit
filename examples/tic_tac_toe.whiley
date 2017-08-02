@@ -1,6 +1,5 @@
-import string from std.ascii
-import print from std.io
-import println from std.io
+import std.ascii
+import std.io
 
 type nat is (int x) where x >= 0
 
@@ -78,53 +77,46 @@ function countOf(Square[] pieces, Square s) -> (int r):
 method printSquare(Square s):
     switch(s):
         case BLANK:
-            print(" ")
+            io.print(" ")
         case CROSS:
-            print("X")
+            io.print("X")
         case CIRCLE:
-            print("O")
+            io.print("O")
 
 method printBoard(Board b):
-    print("|")
+    io.print("|")
     printSquare(b.pieces[0])
     printSquare(b.pieces[1])
     printSquare(b.pieces[2])
-    println("|")
-    print("|")    
+    io.println("|")
+    io.print("|")    
     printSquare(b.pieces[3])
     printSquare(b.pieces[4])
     printSquare(b.pieces[5])    
-    println("|")
-    print("|")    
+    io.println("|")
+    io.print("|")    
     printSquare(b.pieces[6])
     printSquare(b.pieces[7])
     printSquare(b.pieces[8])
-    println("|")
+    io.println("|")
         
 // ===============================================================
 // Test Game
 // ===============================================================
 constant GAME is [0,1,2,3,4,5,6,7,8]
 
-method main(string[] args):
+method main(ascii.string[] args):
     Board b = EmptyBoard()
     int i = 0
     while i < |GAME|:
         int p = GAME[i]
         printBoard(b)
-        print("==")
-        print(p)
-        println("==")        
+        io.print("==")
+        io.print(p)
+        io.println("==")        
         if p < 0 || p > 9 || b.pieces[p] != BLANK || b.move == 9:
-            println("INVALID MOVE!")
+            io.println("INVALID MOVE!")
             break
         else:
             b = play(b,p)
         i = i + 1
-
-
-
-
-
-
-
