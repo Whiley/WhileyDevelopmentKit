@@ -9,9 +9,11 @@ compiling and running Whiley programs.
 
 To install the Whiley Development Kit, first download the latest
 version from the `dist/` directory and unpack the tarball into an
-appropriate directory.  You then need to make sure that `PATH`
-environment variable points to the `bin/` directory, where several
-scripts are provided for running Whiley.
+appropriate directory. You then need to make sure that `PATH`
+environment variable points to the `bin/` directory inside where you
+unpacked the tarball, where several scripts are provided for running
+Whiley. Then set the `WHILEYHOME` environment variable to the
+directory of the unpacked tarball.
 
 ## Run
 
