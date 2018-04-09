@@ -1,5 +1,5 @@
-import std.ascii
-import std.io
+import std::ascii
+import std::io
 
 type nat is (int x) where x >= 0
 
@@ -7,9 +7,9 @@ type nat is (int x) where x >= 0
 // A square on the board is either blank, or holds either a circle or
 // cross.
 // ==================================================================
-constant BLANK is 0
-constant CIRCLE is 1
-constant CROSS is 2
+final int BLANK = 0
+final int CIRCLE = 1
+final int CROSS = 2
 
 type Square is (int x) where x == BLANK || x == CIRCLE || x == CROSS
 
@@ -77,45 +77,45 @@ function countOf(Square[] pieces, Square s) -> (int r):
 method printSquare(Square s):
     switch(s):
         case BLANK:
-            io.print(" ")
+            io::print(" ")
         case CROSS:
-            io.print("X")
+            io::print("X")
         case CIRCLE:
-            io.print("O")
+            io::print("O")
 
 method printBoard(Board b):
-    io.print("|")
+    io::print("|")
     printSquare(b.pieces[0])
     printSquare(b.pieces[1])
     printSquare(b.pieces[2])
-    io.println("|")
-    io.print("|")    
+    io::println("|")
+    io::print("|")    
     printSquare(b.pieces[3])
     printSquare(b.pieces[4])
     printSquare(b.pieces[5])    
-    io.println("|")
-    io.print("|")    
+    io::println("|")
+    io::print("|")    
     printSquare(b.pieces[6])
     printSquare(b.pieces[7])
     printSquare(b.pieces[8])
-    io.println("|")
+    io::println("|")
         
 // ===============================================================
 // Test Game
 // ===============================================================
-constant GAME is [0,1,2,3,4,5,6,7,8]
+final int[] GAME = [0,1,2,3,4,5,6,7,8]
 
-method main(ascii.string[] args):
+method main(ascii::string[] args):
     Board b = EmptyBoard()
     int i = 0
     while i < |GAME|:
         int p = GAME[i]
         printBoard(b)
-        io.print("==")
-        io.print(p)
-        io.println("==")        
+        io::print("==")
+        io::print(p)
+        io::println("==")        
         if p < 0 || p > 9 || b.pieces[p] != BLANK || b.move == 9:
-            io.println("INVALID MOVE!")
+            io::println("INVALID MOVE!")
             break
         else:
             b = play(b,p)
