@@ -3,7 +3,7 @@
   <dirname property="rootdir" file="${ant.file.BuildConfig}"/>
 
   <!-- Set the current Whiley version -->
-  <property name="version" value="0.4.1"/>
+  <property name="version" value="0.4.2"/>
 
   <!-- Load the Maven Ant tasks so that we can work with Maven repositories. -->
   <typedef uri="urn:maven-ant"
@@ -22,11 +22,11 @@
 
   <!-- Identify Local Dependencies -->
   <maven:dependencies filesetId="remote.dependencies">
-    <dependency groupId="org.whiley" artifactId="wycc" version="0.5.8"/>
-    <dependency groupId="org.whiley" artifactId="wyc" version="0.4.16"/>
-    <dependency groupId="org.whiley" artifactId="wytp" version="0.6.4"/>
-    <dependency groupId="org.whiley" artifactId="wyjc" version="0.4.6"/>
-    <dependency groupId="org.whiley" artifactId="wyjs" version="0.4"/>
+    <dependency groupId="org.whiley" artifactId="wycc" version="0.6.3"/>
+    <dependency groupId="org.whiley" artifactId="wyc" version="0.5.8"/>
+    <dependency groupId="org.whiley" artifactId="wytp" version="0.6.14"/>
+    <dependency groupId="org.whiley" artifactId="wyjc" version="0.4.7"/>
+    <dependency groupId="org.whiley" artifactId="wyjs" version="0.4.7"/>
     <dependency groupId="org.whiley" artifactId="jasm" version="1.0.1"/>
   </maven:dependencies>
 
