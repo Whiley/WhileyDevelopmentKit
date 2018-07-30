@@ -3,7 +3,7 @@
   <dirname property="rootdir" file="${ant.file.BuildConfig}"/>
 
   <!-- Set the current Whiley version -->
-  <property name="version" value="0.4.2"/>
+  <property name="version" value="0.5.0"/>
 
   <!-- Load the Maven Ant tasks so that we can work with Maven repositories. -->
   <typedef uri="urn:maven-ant"
