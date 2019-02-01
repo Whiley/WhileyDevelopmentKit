@@ -21,6 +21,7 @@
     <copy todir="${RELEASE_DIR}">
       <fileset dir=".">
 	<include name="config.wyml"/>
+	<include name="README.txt"/>
       </fileset>      
     </copy>
     <echo message="Copying dependencies..."/>
