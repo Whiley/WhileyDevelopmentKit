@@ -38,17 +38,18 @@ LIBDIR=$DIR/lib
 #LIBS="wycc wyc wyjc wytp wyjs jasm"
 
 # check for running under cywin
-cygwin=false
+windows=false
 case "`uname`" in
-  CYGWIN*) cygwin=true ;;
+  CYGWIN*) windows=true ;;
+  MINGW*) windows=true ;;
 esac
 
 ######################
 # CONSTRUCT CLASSPATH
 ######################
 
-if $cygwin; then
-    # under cygwin the classpath separator must be ";"
+if $windows; then
+    # under windows the classpath separator must be ";"
     LIBDIR=`cygpath -m "$LIBDIR"`
     PATHSEP=";"
 else
@@ -56,13 +57,14 @@ else
     PATHSEP=":"
 fi
 
-LIBS=`ls $LIBDIR/*.jar`
+LIBS=`ls "$LIBDIR"/*.jar`
 WHILEY_CLASSPATH=$CLASSPATH
 
 # as there may more than one version of the jar files
 # it is important to first use the * expansion, and then
 # use the last one via the "##* " expansion.
 
+IFS=$'\n'
 for JAR in $LIBS
 do
     case "$JAR" in
