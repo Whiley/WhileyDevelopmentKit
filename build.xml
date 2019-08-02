@@ -20,7 +20,7 @@
     <echo message="Copying default configuration..."/>    
     <copy todir="${RELEASE_DIR}">
       <fileset dir=".">
-	<include name="config.wyml"/>
+	<include name="wy.toml"/>
 	<include name="README.txt"/>
       </fileset>      
     </copy>
