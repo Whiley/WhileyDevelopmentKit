@@ -20,6 +20,8 @@
     <filename name="**/maven*" negate="True"/>
   </fileset>
 
+  <maven:remoteRepository id="remote.repository" url="https://repo1.maven.org/maven2" />
+  
   <!-- Identify Local Dependencies -->
   <maven:dependencies filesetId="remote.dependencies">
     <dependency groupId="org.whiley" artifactId="wycc" version="0.7.15"/>
@@ -29,8 +31,8 @@
     <dependency groupId="org.whiley" artifactId="wyjs" version="0.5.6"/>
     <dependency groupId="org.whiley" artifactId="jmodelgen" version="0.4.1"/>
     <dependency groupId="org.whiley" artifactId="jasm" version="1.0.1"/>
-
-    <dependency groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.5.10"/>    
+    <dependency groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.5.10"/>
+    <remoteRepository refid="remote.repository" />    
   </maven:dependencies>
 
 </project>
