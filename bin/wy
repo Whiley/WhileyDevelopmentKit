@@ -77,15 +77,7 @@ do
 done
 
 ######################
-# CONSTRUCT BOOTPATH
-######################
-
-tmp=$(echo $LIBDIR/wystd-*.jar)
-WYSTD_JAR=${tmp##* }
-WHILEY_BOOTPATH="$WYSTD_JAR"
-
-######################
 # RUN APPLICATION
 ######################
 
-java -server -Xmx2G -cp "$WHILEY_CLASSPATH" -Dwdk.bootpath="$WHILEY_BOOTPATH" wycc.WyMain "$@"
+java -server -Xmx2G -cp "$WHILEY_CLASSPATH" wycli.WyMain "$@"
