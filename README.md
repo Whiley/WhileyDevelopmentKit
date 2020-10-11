@@ -21,16 +21,11 @@ With the `PATH` setup correctly, you should be able to run the `wy` tool
 to compile Whiley programs as follows:
 
 ```
-% cd examples
-% wy compile hello-world.whiley
+% cd example
+% wy build
 ```
 
-At this point, you can run the program using the `wy` tool:
-
-```
-% wy run hello-world
-Hello World
-```
+At this point, you should be able to see the generated JavaScript files in `bin/js`.  You can run the program by pointing your web-browser to the `index.html` file provided.
 
 ## Command-Line Options
 
@@ -40,16 +35,15 @@ To see the available command-line options, run `wy help`:
 usage: wy [--verbose] command [<options>] [<args>]
 
 Commands:
-  help          Display help information
-  compile       Compile one or more Whiley source files
-  decompile     Decompile one or more binary WyIL files
-  run           Execute a given method from a WyIL
-  verify        Compile and verify one or more WyAL files
-  jvmcompile    Compile Whiley source files to JVM class files
-  javacompile   Compile Whiley source files to Java source files
-  jvmrun        Execute a given classfile (requires main method)
-  jscompile     Compile Whiley source files to JavaScript source files [EXPERIMENTAL]
-
+  check     Perform randomised testing of functions and methods
+  build     Perform build operations on an existing project
+  clean     Remove all target (i.e. binary) files
+  config    Get or set configuration options
+  help      Display help information
+  install   Install package into local repository
+  inspect   Inspect a given project file
+  run       Execute method in package
+  
 Run `wy help COMMAND` for more information on a command
 ```
 
