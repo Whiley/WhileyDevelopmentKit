@@ -16,7 +16,7 @@
     <mkdir dir="${RELEASE_DIR}/lib"/>
     <mkdir dir="${RELEASE_DIR}/bin"/>
     <mkdir dir="${RELEASE_DIR}/doc"/>
-    <mkdir dir="${RELEASE_DIR}/examples"/>
+    <mkdir dir="${RELEASE_DIR}/example"/>
     <echo message="Copying default configuration..."/>    
     <copy todir="${RELEASE_DIR}">
       <fileset dir=".">
@@ -36,11 +36,12 @@
 	<include name="wy"/>
       </fileset>
     </copy>
-    <echo message="Copying examples..."/>
-    <copy todir="${RELEASE_DIR}/examples">
-      <fileset dir="examples">
-	<include name="*.whiley"/>
-	<include name="*.input"/>
+    <echo message="Copying example..."/>
+    <copy todir="${RELEASE_DIR}/example">
+      <fileset dir="example">
+	<include name="src/*.whiley"/>
+	<include name="*.html"/>
+	<include name="*.toml"/>	
       </fileset>
     </copy>    
     <chmod verbose="Yes" perm="0544">
