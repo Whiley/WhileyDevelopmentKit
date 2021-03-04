@@ -28,7 +28,7 @@
     <dependency groupId="org.whiley" artifactId="wycli" version="0.8.1"/>
     <dependency groupId="org.whiley" artifactId="wyc" version="0.8.2"/>
     <dependency groupId="org.whiley" artifactId="wytp" version="0.7.0"/>
-    <dependency groupId="org.whiley" artifactId="wyboogie" version="0.2.3"/>
+    <dependency groupId="org.whiley" artifactId="wyboogie" version="0.2.4"/>
     <!--<dependency groupId="org.whiley" artifactId="wyjc" version="0.4.7"/>-->
     <dependency groupId="org.whiley" artifactId="wyjs" version="0.6.0"/>
     <dependency groupId="org.whiley" artifactId="jmodelgen" version="0.4.2"/>
