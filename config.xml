@@ -3,7 +3,7 @@
   <dirname property="rootdir" file="${ant.file.BuildConfig}"/>
 
   <!-- Set the current Whiley version -->
-  <property name="version" value="0.6.0-beta"/>
+  <property name="version" value="0.6.0-SNAPSHOT"/>
 
   <!-- Load the Maven Ant tasks so that we can work with Maven repositories. -->
   <typedef uri="urn:maven-ant"
@@ -24,15 +24,12 @@
 
   <!-- Identify Local Dependencies -->
   <maven:dependencies filesetId="remote.dependencies">
-    <dependency groupId="org.whiley" artifactId="wycc" version="0.8.2"/>
-    <dependency groupId="org.whiley" artifactId="wycli" version="0.8.3"/>
-    <dependency groupId="org.whiley" artifactId="wyc" version="0.8.3"/>
-    <dependency groupId="org.whiley" artifactId="wytp" version="0.7.0"/>
-    <dependency groupId="org.whiley" artifactId="wyboogie" version="0.2.5"/>
-    <!--<dependency groupId="org.whiley" artifactId="wyjc" version="0.4.7"/>-->
-    <dependency groupId="org.whiley" artifactId="wyjs" version="0.6.0"/>
+    <dependency groupId="org.whiley" artifactId="wycc" version="0.9.2"/>
+    <dependency groupId="org.whiley" artifactId="wycli" version="0.9.2"/>
+    <dependency groupId="org.whiley" artifactId="wyc" version="0.9.2"/>    
+<!--    <dependency groupId="org.whiley" artifactId="wyboogie" version="0.2.5"/>-->
+<!--    <dependency groupId="org.whiley" artifactId="wyjs" version="0.6.0"/>-->
     <dependency groupId="org.whiley" artifactId="jmodelgen" version="0.4.3"/>
-    <!--<dependency groupId="org.whiley" artifactId="jasm" version="1.0.2"/>-->
     <dependency groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.5.10"/>
     <remoteRepository refid="remote.repository" />
   </maven:dependencies>

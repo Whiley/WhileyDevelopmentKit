@@ -1,5 +1,2 @@
 [plugins]
 wyc = "wyc.Activator"
-wyjs = "wyjs.Activator"
-wyal = "wyal.Activator"
-wyboogie = "wyboogie.Activator"
