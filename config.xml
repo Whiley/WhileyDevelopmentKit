@@ -24,11 +24,11 @@
 
   <!-- Identify Local Dependencies -->
   <maven:dependencies filesetId="remote.dependencies">
-    <dependency groupId="org.whiley" artifactId="wycc" version="0.9.2"/>
-    <dependency groupId="org.whiley" artifactId="wycli" version="0.9.2"/>
-    <dependency groupId="org.whiley" artifactId="wyc" version="0.9.2"/>    
+    <dependency groupId="org.whiley" artifactId="wycc" version="0.9.3"/>
+    <dependency groupId="org.whiley" artifactId="wycli" version="0.9.3"/>
+    <dependency groupId="org.whiley" artifactId="wyc" version="0.9.3"/> 
+    <dependency groupId="org.whiley" artifactId="wyjs" version="0.9.3"/>
 <!--    <dependency groupId="org.whiley" artifactId="wyboogie" version="0.2.5"/>-->
-<!--    <dependency groupId="org.whiley" artifactId="wyjs" version="0.6.0"/>-->
     <dependency groupId="org.whiley" artifactId="jmodelgen" version="0.4.3"/>
     <dependency groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.5.10"/>
     <remoteRepository refid="remote.repository" />

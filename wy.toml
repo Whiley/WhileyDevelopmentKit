@@ -1,2 +1,3 @@
 [plugins]
 wyc = "wyc.Activator"
+wyjs = "wyjs.Activator"
