@@ -28,7 +28,7 @@
     <dependency groupId="org.whiley" artifactId="wycli" version="0.9.8"/>
     <dependency groupId="org.whiley" artifactId="wyc" version="0.9.8"/> 
     <dependency groupId="org.whiley" artifactId="wyjs" version="0.9.5"/>
-    <dependency groupId="org.whiley" artifactId="wyboogie" version="0.3.2"/>
+    <dependency groupId="org.whiley" artifactId="wyboogie" version="0.3.3"/>
     <dependency groupId="org.whiley" artifactId="jmodelgen" version="0.4.3"/>
     <dependency groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.5.10"/>
     <remoteRepository refid="remote.repository" />
